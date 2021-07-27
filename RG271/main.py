@@ -45,7 +45,7 @@ def main():
     output_dir.mkdir(exist_ok=True, parents=True)
     scraper = TwitterScraper(args.username, max_date=args.dt_max, min_date=args.dt_min)
     df = scraper.scrape()
-    df.to_csv(output_dir.joinpath("results.csv"))
+    df.to_csv(output_dir.joinpath("results.csv"), index=False)
 
 
 if __name__ == "__main__":
