@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Analysis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="px-4 pt-5 my-5 text-center border-bottom">
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">Load a random tweet that either mentions or uses ME Bank in a hashtag and identify
+                whether it is a complaint or not.</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+                <button type="button" class="btn btn-primary btn-lg" onclick="window.location.reload()">Refresh</button>
+            </div>
+            <h1 class="display-6"><strong>{{ result["label"] }} ({{"{:,.2f}%".format(result["confidence"] *
+                    100)}})</strong></h1>
+        </div>
+        <div class="overflow-hidden">
+            <div class="container">
+                <blockquote class="twitter-tweet tw-align-center">
+                    <a href="{{ tweet_url }}"></a>
+                </blockquote>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
